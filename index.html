@@ -1,113 +1,235 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>AD Creative | Portfolio</title>
 
-  <link rel="stylesheet" href="Style.css">
+    <title>AD Creative | Short-Form Content Portfolio</title>
+
+    <meta name="description" content="I help creators turn long-form videos into engaging short-form content through storytelling, high-retention editing and motion graphics.">
+
+    <meta name="theme-color" content="#050B18">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <h2>AD Creative</h2>
+    <!-- HEADER / NAVIGATION -->
 
-            <div>
+    <header>
+        <nav aria-label="Main navigation">
+
+            <a href="#home" class="brand">
+                <span>AD</span> Creative
+            </a>
+
+            <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#work">My Work</a>
                 <a href="#contact">Contact</a>
             </div>
+
         </nav>
     </header>
 
+
     <main>
+
+        <!-- HERO SECTION -->
+
         <section id="home">
 
-            <p>SHORT-FORM CONTENT SPECIALIST</p>
+            <div class="hero-content">
 
-            <h1>Content that holds attention.</h1>
+                <p class="hero-label">
+                    SHORT-FORM CONTENT SPECIALIST
+                </p>
 
-            <p>
-                I help creators turn long-form videos
-                into engaging short-form content.
-            </p>
+                <h1>
+                    Content that<br>
+                    holds attention<span>.</span>
+                </h1>
 
-            <button>View My Work</button>
+                <p class="hero-description">
+                    I turn long-form videos into engaging
+                    short-form content designed to capture
+                    attention and keep viewers watching.
+                </p>
+
+                <a href="#work" class="cta-button">
+                    View My Work <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+
+            <!-- HERO PORTRAIT -->
+
+            <div class="hero-visual" aria-label="AD Creative portrait">
+
+                <img
+                    src="images/profile.png"
+                    class="hero-background"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <img
+                    src="images/portrait.png"
+                    class="hero-main-image"
+                    alt="Portrait of the creator of AD Creative"
+                    fetchpriority="high"
+                >
+
+            </div>
 
         </section>
-           
-<section id="work">
 
-    <p>MY PORTFOLIO</p>
 
-    <h2>Selected Work</h2>
+        <!-- PORTFOLIO SECTION -->
 
-    <p>
-        A selection of short-form video projects
-        showcasing storytelling and editing.
-    </p>
+        <section id="work">
 
-    <div class="project">
-        <h3>Project 01</h3>
-        <p>Short-form Video Editing</p>
-        <video controls playsinline preload="metadata">
-            <source src="videos/project-01.mp4" type="video/mp4">
-        </video>
-    </div>
+            <p class="section-label">MY PORTFOLIO</p>
 
-    <div class="project">
-        <h3>Project 02</h3>
-        <p>Podcast to Engaging Short-form Content</p>
-        <video controls playsinline preload="metadata">
-            <source src="videos/project-02.mp4" type="video/mp4">
-        </video>
-    </div>
+            <h2>Selected Work</h2>
 
-    <div class="project">
-        <h3>Project 03</h3>
-        <p>Storytelling, Captions & Motion Graphics</p>
-        <video controls playsinline preload="metadata">
-            <source src="videos/project-03.mp4" type="video/mp4">
-        </video>
-    </div>
-
-</section>
-
-                <section id="contact">
-
-            <p>LET'S WORK TOGETHER</p>
-
-            <h2>Have a project in mind?</h2>
-
-            <p>
-                Let's create short-form content
-                that captures attention and keeps viewers watching.
+            <p class="section-description">
+                A selection of short-form video projects
+                showcasing storytelling, editing and
+                creative motion graphics.
             </p>
 
-            <a href="mailto:seiddin.9@gmail.com" class="cta-button">
+
+            <!-- PROJECT 01 -->
+
+            <article class="project">
+
+                <h3>Project 01</h3>
+
+                <p>Short-Form Video Editing</p>
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster=""
+                >
+                    <source
+                        src="./videos/project-01.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support HTML video.
+                </video>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project">
+
+                <h3>Project 02</h3>
+
+                <p>Podcast Repurposing &amp; Content Editing</p>
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+                    <source
+                        src="./videos/project-02.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support HTML video.
+                </video>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project">
+
+                <h3>Project 03</h3>
+
+                <p>Storytelling, Captions &amp; Motion Graphics</p>
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+                    <source
+                        src="./videos/project-03.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support HTML video.
+                </video>
+
+            </article>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+
+        <section id="contact">
+
+            <p class="section-label">LET'S WORK TOGETHER</p>
+
+            <h2>Ready to make your content stand out?</h2>
+
+            <p class="contact-description">
+                Turn your long-form videos into engaging
+                short-form content designed to capture attention,
+                build engagement, and keep viewers watching.
+            </p>
+
+            <a
+                href="mailto:seiddin.9@gmail.com"
+                class="cta-button"
+            >
                 Email Me
             </a>
 
-            <p>
-                <a href="https://www.upwork.com/freelancers/~01be3e36c131f76c75?mp_source=share"
-                   target="_blank" rel="noopener noreferrer">
+            <div class="contact-links">
+
+                <a
+                    href="https://www.upwork.com/freelancers/~01be3e36c131f76c75?mp_source=share"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Hire Me on Upwork
                 </a>
-            </p>
 
-            <p>
-                <a href="https://www.linkedin.com/in/seid-dineka"
-                   target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.linkedin.com/in/seid-dineka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Connect on LinkedIn
                 </a>
-            </p>
 
-                </section>
+            </div>
+
+        </section>
+
     </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 AD Creative. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
