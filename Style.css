@@ -1,161 +1,614 @@
-/* Main design */
+
+/* =========================================
+   AD CREATIVE — PREMIUM CREATIVE STUDIO
+   Typography: Tactic Sans + Inter
+========================================= */
+
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* CUSTOM FONT */
+
+@font-face {
+    font-family: 'Tactic Sans';
+    src: url('fonts/TacticSans-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* GLOBAL RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
-    background-color: #0F172A;
+    background: #050B18;
     color: #FFFFFF;
-    font-family: Arial, sans-serif;
-    padding: 40px 24px;
-}
-
-/* Main heading */
-h1 {
-    font-size: 42px;
-    color: #38BDF8;
-    margin-bottom: 20px;
-}
-
-/* Description */
-p {
-    color: #CBD5E1;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Button */
-button {
-    background-color: #38BDF8;
-    color: #0F172A;
-    border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-    font-weight: bold;
-}
-/* 1. Main page */
-body {
-    padding: 0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 2. Navigation bar */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Tactic Sans', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    color: #CBD5E1;
+}
+
+
+/* =========================================
+   HEADER / NAVIGATION
+========================================= */
+
 header {
-    padding: 24px;
-    border-bottom: 1px solid #1E293B;
+    width: 100%;
+    padding: 24px 5%;
+    position: relative;
+    z-index: 10;
+    background: #050B18;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.10);
 }
 
 nav {
+    max-width: 1450px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-nav h2 {
+.brand {
     color: #FFFFFF;
-    font-size: 23px;
+    text-decoration: none;
+    font-family: 'Tactic Sans', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
-nav a {
+.brand span {
+    color: #38BDF8;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-links a {
     color: #CBD5E1;
     text-decoration: none;
-    margin-left: 12px;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* 3. Hero section */
-#home {
-    padding: 100px 24px;
-    min-height: 75vh;
-}
-
-#home p:first-child {
+.nav-links a:hover {
     color: #38BDF8;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+#home {
+    width: 100%;
+    min-height: 680px;
+    padding: 75px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 78% 55%,
+            rgba(14, 165, 233, 0.22),
+            transparent 48%
+        ),
+        linear-gradient(
+            110deg,
+            #050B18,
+            #0F172A 65%,
+            #071B35
+        );
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-label {
+    color: #38BDF8;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
     margin-bottom: 24px;
 }
 
-#home h1 {
-    color: #FFFFFF;
-    font-size: 42px;
-    line-height: 1.2;
-    max-width: 600px;
-    margin-bottom: 24px;
+#home .hero-content h1 {
+    font-family: 'Tactic Sans', sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
 }
 
-#home p:nth-of-type(2) {
-    max-width: 450px;
+#home .hero-content h1 span {
+    color: #38BDF8;
+}
+
+.hero-description {
+    max-width: 520px;
+    color: #CBD5E1;
     font-size: 18px;
     line-height: 1.7;
-    color: #CBD5E1;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
-/* 4. Button */
-button {
-    cursor: pointer;
-    transition: 0.3s;
+
+/* =========================================
+   HERO BUTTON
+========================================= */
+
+#home .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 16px 30px;
+    border-radius: 50px;
+
+    background: #38BDF8;
+    color: #07111F;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-button:hover {
-    background-color: #0EA5E9;
+#home .cta-button span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+#home .cta-button:hover {
+    background: #0EA5E9;
     transform: translateY(-3px);
-}
-/* 1. Portfolio section */
-#work {
-    padding: 80px 24px;
-    border-top: 1px solid #1E293B;
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.22);
 }
 
-/* 2. Section heading */
-#work h2 {
-    font-size: 36px;
-    color: #FFFFFF;
+
+/* =========================================
+   HERO IMAGE / PORTRAIT
+========================================= */
+
+.hero-visual {
+    flex: 0 0 46%;
+    max-width: 600px;
+    height: 560px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    opacity: 0.13;
+    filter: blur(9px) brightness(0.65);
+
+    transform: scale(1.08);
+    z-index: 0;
+}
+
+.hero-main-image {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    filter:
+        drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35));
+}
+
+
+/* =========================================
+   PORTFOLIO SECTION
+========================================= */
+
+#work {
+    padding: 100px 7%;
+    border-top: 1px solid #1E293B;
+    background: #0B1425;
+}
+
+.section-label {
+    color: #38BDF8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+#work h2,
+#contact h2 {
+    font-size: clamp(35px, 5vw, 48px);
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
-/* 3. Project cards */
+.section-description {
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 38px;
+}
+
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+
 .project {
-    background-color: #1E293B;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    padding: 28px;
-    margin-top: 24px;
-    transition: 0.3s;
+    max-width: 1000px;
+    margin: 28px auto 35px;
+    padding: 30px;
+
+    background: #111F34;
+    border: 1px solid #263B55;
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* 4. Project title */
-.project h3 {
-    color: #38BDF8;
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-/* 5. Hover effect */
 .project:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: #38BDF8;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* Video player styling */
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.project p {
+    color: #94A3B8;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
 .project video {
-    width: 100%;
     display: block;
-    margin-top: 18px;
-    border-radius: 10px;
-    background-color: #000000;
+
+    width: 100%;
+    max-width: 420px;
+
     aspect-ratio: 9 / 16;
     object-fit: contain;
+
+    margin: 0 auto;
+
+    background: #000000;
+    border-radius: 10px;
 }
 
-/* Project card spacing */
-.project {
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+#contact {
+    padding: 100px 7%;
+    border-top: 1px solid #263B55;
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            rgba(56, 189, 248, 0.08),
+            transparent 50%
+        ),
+        #0F172A;
+}
+
+#contact h2 {
+    max-width: 750px;
+}
+
+.contact-description {
+    max-width: 570px;
+    font-size: 16px;
+    line-height: 1.8;
     margin-bottom: 30px;
+}
+
+
+/* CONTACT EMAIL BUTTON */
+
+#contact .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+
+    background: #38BDF8;
+    color: #07111F;
+
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: all 0.3s ease;
+}
+
+#contact .cta-button:hover {
+    background: #0EA5E9;
+    transform: translateY(-3px);
+}
+
+
+/* UPWORK / LINKEDIN LINKS */
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.contact-links a {
+    color: #38BDF8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #FFFFFF;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 25px 7%;
+    text-align: center;
+    background: #050B18;
+    border-top: 1px solid #1E293B;
+}
+
+footer p {
+    color: #64748B;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+
+    #home {
+        min-height: 600px;
+        padding: 65px 5%;
+        gap: 20px;
+    }
+
+    #home .hero-content h1 {
+        font-size: 54px;
+    }
+
+    .hero-visual {
+        flex-basis: 43%;
+        height: 480px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px 22px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    #home {
+        min-height: auto;
+        padding: 65px 22px 30px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    #home .hero-content h1 {
+        font-size: 45px;
+        line-height: 1.12;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .hero-visual {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        height: 430px;
+        margin-top: 10px;
+    }
+
+    .hero-main-image {
+        width: 100%;
+        height: 100%;
+        object-position: center bottom;
+    }
+
+
+    /* PORTFOLIO */
+
+    #work {
+        padding: 70px 20px;
+    }
+
+    #work h2,
+    #contact h2 {
+        font-size: 36px;
+    }
+
+    .project {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .project h3 {
+        font-size: 21px;
+    }
+
+    .project video {
+        max-width: 100%;
+    }
+
+
+    /* CONTACT */
+
+    #contact {
+        padding: 70px 22px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    footer {
+        padding: 22px 15px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 11px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    #home .hero-content h1 {
+        font-size: 39px;
+    }
+
+    .hero-visual {
+        height: 350px;
+    }
 }
