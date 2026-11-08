@@ -1,0 +1,168 @@
+/* extra.css: load AFTER Style.css */
+
+.text-link {
+    margin-left: 22px;
+    color: #38BDF8;
+    font-weight: 700;
+    text-decoration: none;
+}
+.text-link:hover { color: #FFFFFF; }
+
+.cta-button:focus-visible,
+.text-link:focus-visible,
+.nav-links a:focus-visible,
+.contact-links a:focus-visible,
+.copy-email-button:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+.nav-links { gap: 30px; }
+
+/* Project details */
+.project-details {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+}
+.project-details dt {
+    color: #38BDF8;
+    font-size: 13px;
+    font-weight: 700;
+}
+.project-details dd {
+    color: #CBD5E1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Services, process, about */
+#services, #process, #about {
+    padding: 90px 7%;
+    border-top: 1px solid #1E293B;
+}
+#services { background: #0F172A; }
+#process  { background: #0B1425; }
+#about    { background: #0F172A; }
+
+#services h2, #process h2, #about h2 {
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 28px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+.service {
+    padding: 26px;
+    background: #111F34;
+    border: 1px solid #263B55;
+    border-radius: 14px;
+}
+.service h3 { font-size: 21px; margin-bottom: 10px; }
+
+.pricing-note {
+    margin-top: 28px;
+    max-width: 620px;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.process-list {
+    max-width: 680px;
+    padding-left: 22px;
+    display: grid;
+    gap: 16px;
+    color: #CBD5E1;
+}
+.process-list li::marker { color: #38BDF8; font-weight: 700; }
+.process-list strong { color: #FFFFFF; }
+
+.about-text { max-width: 620px; font-size: 17px; line-height: 1.8; }
+
+@media (max-width: 950px) {
+    .service-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+    #services, #process, #about { padding: 64px 22px; }
+    .text-link { display: inline-block; margin: 18px 0 0 0; }
+}
+
+/* Circular portrait */
+.hero-background { display: none; }
+.hero-main-image {
+    width: min(100%, 460px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 4px solid #38BDF8;
+    object-fit: cover;
+    filter: none;
+    box-shadow: 0 20px 60px rgba(14, 165, 233, 0.25);
+}
+
+.contact-handle { margin-top: 22px; color: #CBD5E1; }
+.contact-handle strong { color: #38BDF8; }
+
+/* Premium contact link buttons */
+#contact .contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 270px));
+    gap: 16px;
+    margin-top: 28px;
+}
+#contact .contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 18px 28px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+#contact .contact-links a span[aria-hidden] { font-size: 18px; }
+
+#contact .contact-links .link-primary {
+    background: #38BDF8;
+    color: #07111F;
+    border: 2px solid #38BDF8;
+}
+#contact .contact-links .link-primary:hover {
+    background: #0EA5E9;
+    border-color: #0EA5E9;
+    color: #07111F;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.3);
+}
+#contact .contact-links .link-outline {
+    background: transparent;
+    color: #38BDF8;
+    border: 2px solid #38BDF8;
+}
+#contact .contact-links .link-outline:hover {
+    background: rgba(56, 189, 248, 0.12);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.18);
+}
+#contact .contact-links a:active { transform: scale(0.98); }
+#contact .contact-links a:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    #contact .contact-links { grid-template-columns: 1fr; }
+}
